@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhavya Suneja — Finance × AI Analyst</title>
+  <meta name="description" content="Bhavya Suneja — Finance × AI Analyst turning data into decisions at Series A–D startups. 5 years across Mastercard, American Express, and Bain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Syne:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy-deep:   #0b1d33;
+      --navy-mid:    #1a3f6e;
+      --navy-light:  #2563a8;
+      --navy-pale:   #eef3f9;
+      --navy-tint:   #dde7f3;
+      --white:       #ffffff;
+      --gray-text:   #7a8fa6;
+      --body-text:   #2e3f54;
+      --border:      #dce5ef;
+      --tag-bg:      #eef3f9;
+      --tag-text:    #1a3f6e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--white);
+      color: var(--body-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-name {
+      font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600;
+      color: var(--navy-deep); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--gray-text); letter-spacing: 0.04em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy-mid); }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 100px 60px 90px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-light);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 28px; height: 1.5px; background: var(--navy-light);
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 500;
+      line-height: 1.05; color: var(--navy-deep); margin-bottom: 24px; letter-spacing: -0.01em;
+    }
+    .hero-tagline {
+      font-size: 17px; font-weight: 400; color: var(--body-text); line-height: 1.7;
+      max-width: 440px; margin-bottom: 36px;
+    }
+    .hero-tagline strong { color: var(--navy-mid); font-weight: 500; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; font-family: 'Syne', sans-serif; font-size: 13px;
+      font-weight: 600; letter-spacing: 0.05em; padding: 13px 28px;
+      border-radius: 4px; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-primary { background: var(--navy-mid); color: var(--white); border: 1.5px solid var(--navy-mid); }
+    .btn-primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
+    .btn-secondary { background: transparent; color: var(--navy-mid); border: 1.5px solid var(--navy-tint); }
+    .btn-secondary:hover { border-color: var(--navy-mid); background: var(--navy-pale); }
+
+    /* HERO STATS */
+    .hero-right { display: flex; flex-direction: column; gap: 16px; }
+    .hero-stat-card {
+      background: var(--navy-pale); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600;
+      color: var(--navy-mid); line-height: 1; min-width: 70px;
+    }
+    .hero-stat-label { font-size: 13px; color: var(--gray-text); line-height: 1.5; padding-top: 4px; }
+    .hero-stat-label strong { display: block; font-size: 14px; font-weight: 500; color: var(--navy-deep); margin-bottom: 2px; }
+
+    /* SECTIONS */
+    .section-divider { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+    .section-divider hr { border: none; border-top: 1px solid var(--border); }
+    section { max-width: 1100px; margin: 0 auto; padding: 90px 60px; }
+    .section-label {
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy-light);
+      margin-bottom: 48px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; display: block; flex: 1; height: 1px; background: var(--border); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+    .about-headline {
+      font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500;
+      color: var(--navy-deep); line-height: 1.2; letter-spacing: -0.01em;
+      position: sticky; top: 100px;
+    }
+    .about-body p { font-size: 16px; color: var(--body-text); line-height: 1.85; margin-bottom: 20px; }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body strong { color: var(--navy-mid); font-weight: 500; }
+
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--border);
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta { display: flex; flex-direction: column; gap: 12px; }
+    .exp-logo {
+      width: 44px; height: 44px; object-fit: contain;
+      border-radius: 8px; border: 1px solid var(--border); padding: 5px; background: white;
+    }
+    .exp-logo-fallback {
+      width: 44px; height: 44px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--navy-pale); display: none; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+      color: var(--navy-mid); letter-spacing: 0.04em; text-align: center;
+    }
+    .exp-dates { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 500; color: var(--gray-text); letter-spacing: 0.06em; }
+    .exp-company { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--navy-deep); }
+    .exp-role {
+      font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500;
+      color: var(--navy-deep); line-height: 1.25; margin-bottom: 16px;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .exp-bullets li { font-size: 15px; color: var(--body-text); line-height: 1.65; display: flex; gap: 12px; }
+    .exp-bullets li::before {
+      content: ''; display: block; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--navy-light); margin-top: 10px; flex-shrink: 0;
+    }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .exp-tag {
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 500;
+      color: var(--tag-text); background: var(--tag-bg);
+      border: 1px solid var(--navy-tint); border-radius: 3px; padding: 3px 10px; letter-spacing: 0.04em;
+    }
+
+    /* SKILLS */
+    .skills-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 400;
+      color: var(--navy-mid); background: var(--navy-pale);
+      border: 1px solid var(--navy-tint); border-radius: 100px; padding: 8px 20px;
+      transition: all 0.18s; cursor: default;
+    }
+    .skill-tag:hover { background: var(--navy-mid); color: var(--white); border-color: var(--navy-mid); }
+    .skill-tag.featured { background: var(--navy-mid); color: var(--white); border-color: var(--navy-mid); }
+
+    /* CONTACT */
+    .contact-inner {
+      background: var(--navy-deep); border-radius: 16px;
+      padding: 70px 80px; text-align: center;
+    }
+    .contact-eyebrow {
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--navy-tint); opacity: 0.7; margin-bottom: 20px;
+    }
+    .contact-heading {
+      font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 500;
+      color: var(--white); line-height: 1.1; margin-bottom: 20px;
+    }
+    .contact-sub {
+      font-size: 16px; color: var(--navy-tint); opacity: 0.75;
+      margin-bottom: 44px; max-width: 420px; margin-left: auto; margin-right: auto;
+    }
+    .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.05em; padding: 13px 28px; border-radius: 4px; transition: all 0.2s;
+    }
+    .contact-link-primary { background: var(--white); color: var(--navy-deep); }
+    .contact-link-primary:hover { opacity: 0.9; }
+    .contact-link-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.25); }
+    .contact-link-ghost:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.07); }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 32px 60px;
+      font-family: 'Syne', sans-serif; font-size: 12px;
+      color: var(--gray-text); letter-spacing: 0.05em; border-top: 1px solid var(--border);
+    }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { gap: 20px; }
+      .hero { grid-template-columns: 1fr; padding: 60px 24px 50px; gap: 40px; }
+      .hero-name { font-size: 52px; }
+      section { padding: 60px 24px; }
+      .section-divider { padding: 0 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-headline { font-size: 30px; position: static; }
+      .exp-item { grid-template-columns: 1fr; gap: 20px; }
+      .exp-meta { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; }
+      .contact-inner { padding: 50px 28px; border-radius: 12px; }
+      .contact-heading { font-size: 38px; }
+    }
+    @media (max-width: 560px) {
+      .hero-name { font-size: 42px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-name">Bhavya Suneja</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left fade-in">
+      <p class="hero-eyebrow">Available for new roles</p>
+      <h1 class="hero-name">Bhavya<br>Suneja</h1>
+      <p class="hero-tagline">
+        <strong>Finance × AI Analyst</strong> — turning data into decisions
+        at Fortune 500 companies. 5 years across Mastercard, American Express,
+        and Bain & Co building scaled analytics solutions and transforimg data to business insights.
+      </p>
+      <div class="hero-ctas">
+        <a href="#experience" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right fade-in" style="transition-delay: 0.15s">
+      <div class="hero-stat-card">
+        <div class="hero-stat-num">5+</div>
+        <div class="hero-stat-label">
+          <strong>Years in analytics and consulting</strong>
+          Across financial services &amp; strategy consulting
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">
+          <strong>Institutions</strong>
+          Mastercard · American Express · Bain &amp; Company
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num">AI</div>
+        <div class="hero-stat-label">
+          <strong>Currently building</strong>
+          A personal finance agent — LLM-powered bank data analyser
+          to sort personal finances
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"><hr /></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">About</p>
+    <div class="about-grid fade-in">
+      <h2 class="about-headline">Analytics that lives<br>outside the<br>dashboard.</h2>
+      <div class="about-body">
+        <p>
+          I'm an analytics consultant with five years of experience helping financial
+          services companies make faster, better-grounded decisions. My work spans
+          <strong>business analytics, customer segmentation, propensity modelling,</strong>
+          and scaled data products — built across Mastercard Advisors, American Express,
+          and Bain Capability Network.
+        </p>
+        <p>
+          What I care about most is the distance between an insight and a decision.
+          In large organisations, that distance is often enormous — models sit in notebooks,
+          dashboards go unread, and strategy teams operate on gut feel. I've spent my career
+          shortening that gap: owning work end-to-end, from raw data to the recommendation
+          that lands in a business meeting.
+        </p>
+        <p>
+          I'm now applying that domain depth to AI — building LLM-powered tools for
+          personal finance, and targeting <strong>Series A–D fintech and AI startups</strong>
+          where analytics directly shapes product and strategy decisions, not just reports.
+        </p>
+        <p>
+          Based in Gurgaon. Open to remote-first roles with global teams.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><hr /></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Experience</p>
+    <div class="exp-list">
+
+      <div class="exp-item fade-in">
+        <div class="exp-meta">
+          <img src="https://logo.clearbit.com/mastercard.com" alt="Mastercard" class="exp-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="exp-logo-fallback">MC</div>
+          <div class="exp-company">Mastercard</div>
+          <div class="exp-dates">2025 — Present</div>
+        </div>
+        <div>
+          <h3 class="exp-role">Analytics Consultant,<br>Advisors &amp; Consulting Services</h3>
+          <ul class="exp-bullets">
+            <li>Delivered end-to-end analytics consulting for banking and financial services clients — spanning customer segmentation, propensity modelling, and data-driven strategy.</li>
+            <li>Built and owned a DPD-based predictive model for a cash loan book, enabling decision making for new to bank loans for early delinquency risk.</li>
+            <li>Translated complex analytical outputs into executive-ready narratives, bridging the gap between data science and commercial decision-making for senior client stakeholders.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Customer Segmentation</span>
+            <span class="exp-tag">Propensity Modelling</span>
+            <span class="exp-tag">Analytics Consulting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-in">
+        <div class="exp-meta">
+          <img src="https://logo.clearbit.com/americanexpress.com" alt="American Express" class="exp-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="exp-logo-fallback">AE</div>
+          <div class="exp-company">American Express</div>
+          <div class="exp-dates">2022 — 2025</div>
+        </div>
+        <div>
+          <h3 class="exp-role">Senior Analyst,<br>Data Analytics</h3>
+          <ul class="exp-bullets">
+            <li>Developed and maintained scaled SQL and Python analytics products for the merchant and card business — including offer insights, incrementality measurement, and lapsed/new/repeat customer tracking across global portfolios.</li>
+            <li>Owned end-to-end delivery of recurring analytics reports consumed by business leaders, building automation pipelines that reduced manual effort and improved reporting cadence.</li>
+            <li>Partnered with product and strategy teams to design measurement frameworks for campaign performance and customer engagement.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">PySpark</span>
+            <span class="exp-tag">Campaign Measurement</span>
+            <span class="exp-tag">Analytics Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-in">
+        <div class="exp-meta">
+          <img src="https://logo.clearbit.com/bain.com" alt="Bain &amp; Company" class="exp-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="exp-logo-fallback">BCN</div>
+          <div class="exp-company">Bain &amp; Company</div>
+          <div class="exp-dates">2021 — 2022</div>
+        </div>
+        <div>
+          <h3 class="exp-role">Research &amp; Analytics Associate,<br>Bain Capability Network</h3>
+          <ul class="exp-bullets">
+            <li>Supported strategy consulting engagements through research, competitive analysis, and data synthesis — delivering structured outputs to consulting teams under tight timelines.</li>
+            <li>Built analytical models and visualisations in Excel, Alteryx, and Tableau to support client-facing presentations across financial services and consumer sectors.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Excel</span>
+            <span class="exp-tag">Alteryx</span>
+            <span class="exp-tag">Tableau</span>
+            <span class="exp-tag">Strategy Research</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"><hr /></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">Skills</p>
+    <div class="skills-cloud fade-in">
+      <span class="skill-tag featured">SQL</span>
+      <span class="skill-tag featured">Python</span>
+      <span class="skill-tag">PySpark</span>
+      <span class="skill-tag">Tableau</span>
+      <span class="skill-tag">Excel</span>
+      <span class="skill-tag">Alteryx</span>
+      <span class="skill-tag featured">Business Analytics</span>
+      <span class="skill-tag">Customer Segmentation</span>
+      <span class="skill-tag">Propensity Modelling</span>
+      <span class="skill-tag">A/B Testing</span>
+      <span class="skill-tag">Incrementality Measurement</span>
+      <span class="skill-tag featured">Analytics Consulting</span>
+      <span class="skill-tag">Stakeholder Communication</span>
+      <span class="skill-tag">Strategy &amp; Insights</span>
+      <span class="skill-tag featured">LLM APIs</span>
+      <span class="skill-tag">Machine Learning</span>
+      <span class="skill-tag">scikit-learn</span>
+      <span class="skill-tag">Prompt Engineering</span>
+      <span class="skill-tag">SQLite</span>
+      <span class="skill-tag">Jupyter</span>
+      <span class="skill-tag">Git</span>
+    </div>
+  </section>
+
+  <div class="section-divider"><hr /></div>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom: 90px;">
+    <p class="section-label">Contact</p>
+    <div class="contact-inner fade-in">
+      <p class="contact-eyebrow">Open to new opportunities</p>
+      <h2 class="contact-heading">Let's work<br>together.</h2>
+      <p class="contact-sub">
+        Interested in analytics, AI, and fintech roles at early-stage startups.
+        Always happy to connect.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:bhavya716@gmail.com" class="contact-link contact-link-primary">Email me</a>
+        <a href="https://www.linkedin.com/in/bhavya-suneja-b475802a/" target="_blank" rel="noopener" class="contact-link contact-link-ghost">LinkedIn</a>
+        <a href="https://github.com/bhavya716-build" target="_blank" rel="noopener" class="contact-link contact-link-ghost">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Bhavya Suneja &nbsp;·&nbsp; Gurgaon, India
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      if (!el.style.transitionDelay) el.style.transitionDelay = (i * 0.04) + 's';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
